@@ -23,7 +23,7 @@
     <div class="item">
         <h2>Switch ContentEditable State</h2>
         <div class="link">
-            <a href="javascript:(function(){ var body = document.body, attr = 'contentEditable', txt = '[ContentEditable]'; if (body.getAttribute(attr)){ body.removeAttribute(attr); document.title = document.title.replace(txt, ''); } else { body.setAttribute(attr, true); document.title = txt + document.title; } })();">ContentEditable</a>
+            <a href="javascript:(function(){ var body = document.body, attr = 'contentEditable', txt = '[ContentEditable]'; if (body.getAttribute(attr)){ body.removeAttribute(attr); document.title = document.title.replace(txt, ''); } else { body.setAttribute(attr, true); body.setAttribute('spellcheck', false); document.title = txt + document.title; } })();">ContentEditable</a>
         </div>
         <code>
             javascript:(function(){
@@ -36,6 +36,7 @@
                     document.title = document.title.replace(txt, '');
                 }else{
                     body.setAttribute(attr, true);
+                    body.setAttribute('spellcheck', false);
                     document.title = txt + document.title;
                 }
             })();
