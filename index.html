@@ -6,11 +6,12 @@
     <style type="text/css">
         h1,h2,code{padding:0}
         .wrap{width: 75%; margin: 0 auto; padding-top: 30px; font: 12px/1.5em \5FAE\8F6F\96C5\9ED1;}
-        .sub_tit{ margin-bottom: 20px; color: #666;}
-        .item{ margin-bottom: 10px;}
-        .item h2{font-size: 14px;}
-        .item .link{ margin-bottom: 10px;}
-        .item .link a{ padding: 5px 10px; background: #ddd; border-radius: 3px; color: #333;}
+        .sub_tit{ color: #666;}
+        .item{ padding: 10px 0; margin-bottom: 10px;}
+        .item h2{font-size: 14px; margin-bottom: 15px;}
+        .item .link{ margin-bottom: 15px;}
+        /*.item .link:after{ content: "drag the link to your bookmark bar"; margin-left: 5px; color: #999;}*/
+        .item .link a{ padding: 5px 10px; background: #d70000; border-radius: 3px; color: #fff;}
         .item .link a, .item .link a:hover{ text-decoration: none;}
         .item code{display: block; border: 1px solid #ddd; background: #f0f0f0; border-radius: 3px; padding: 5px; font: 12px/1.5em "courier new"; color: #333;}
     </style>
@@ -18,10 +19,10 @@
 <body>
 <div class="wrap">
     <h1>Useful Bookmarklets</h1>
-    <div class="sub_tit">Drag gray link go your bookmarklet bar.</div>
+    <div class="sub_tit">Drag the red link to your bookmark bar will do the trick.</div>
 
     <div class="item">
-        <h2>Switch ContentEditable State</h2>
+        <h2>[2013-10-30] Switch ContentEditable State (chrome)</h2>
         <div class="link">
             <a href="javascript:(function(){ var body = document.body, attr = 'contentEditable', txt = '[ContentEditable]'; if (body.getAttribute(attr)){ body.removeAttribute(attr); document.title = document.title.replace(txt, ''); } else { body.setAttribute(attr, true); body.setAttribute('spellcheck', false); document.title = txt + document.title; } })();">ContentEditable</a>
         </div>
@@ -43,5 +44,12 @@
         </code>
     </div>
 </div>
+<script type="text/javascript">
+    document.addEventListener('click', function(e){
+        if(e.target.tagName.toLocaleLowerCase() === 'a'){
+            e.preventDefault();
+        }
+    });
+</script>
 </body>
 </html>
