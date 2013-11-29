@@ -43,6 +43,23 @@
             })();
         </code>
     </div>
+
+    <div class="item">
+        <h2>[2013-11-29] TA show percentage</h2>
+        <div class="link">
+            <a href="javascript:(function(){  var sum = $('#dataTable').find('.sum').find('td').eq(2).html(); console.log(sum); $('#sortTable').find('tr').each(function(){ var td = $(this).find('td').eq(2); var pageView = td.html(); td.html(pageView + ' | ' + (parseInt(pageView)/parseInt(sum)).toFixed(2)*100 + '%'); });)();">ContentEditable</a>
+        </div>
+        <code>
+            javascript:(function(){  var sum = $('#dataTable').find('.sum').find('td').eq(2).html();
+            console.log(sum);
+            $('#sortTable').find('tr').each(function(){
+            var td = $(this).find('td').eq(2);
+            var pageView = td.html();
+
+            td.html(pageView + ' | ' + (parseInt(pageView)/parseInt(sum)).toFixed(2)*100 + '%');
+            });)();
+        </code>
+    </div>
 </div>
 <script type="text/javascript">
     document.addEventListener('click', function(e){
